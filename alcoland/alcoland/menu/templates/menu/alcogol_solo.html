@@ -1,0 +1,41 @@
+{% extends 'menu/main.html' %}
+
+{% block content %}
+
+<div class="solo-grid-container">
+    <img class="picture" src="{{ alcogol.photo.url }}" alt="" width="400" height="500">
+    <div class="right">
+        <div class="name"><h1>{{ alcogol.name }}</h1></div>
+        <div class="character">
+            <h2>Характеристики</h2>
+            {% if pivo %}
+            <h3>Страна: {{ alcogol.characters.country }}</h3>
+            <h3>Торговая марка: {{ alcogol.characters.mark }}</h3>
+            <h3>Обьем: {{ alcogol.characters.volume }}л</h3>
+            <h3>Крепость: {{ alcogol.characters.strength }}%</h3>
+            <h3>Цвет: {{ alcogol.characters.color }}</h3>
+            {% endif %}
+            {% if vino %}
+            <h3>Страна: {{ alcogol.characters.country }}</h3>
+            <h3>Торговая марка: {{ alcogol.characters.mark }}</h3>
+            <h3>Обьем: {{ alcogol.characters.volume }}л</h3>
+            <h3>Крепость: {{ alcogol.characters.strength }}%</h3>
+            <h3>Цвет: {{ alcogol.characters.color }}</h3>
+            <h3>Cодержание сахара: {{ alcogol.characters.sugar_supply }}</h3>
+            {% endif %}
+            {% if cognak or vodka or tekila or rom%}
+            <h3>Страна: {{ alcogol.characters.country }}</h3>
+            <h3>Торговая марка: {{ alcogol.characters.mark }}</h3>
+            <h3>Обьем: {{ alcogol.characters.volume }}л</h3>
+            <h3>Крепость: {{ alcogol.characters.strength }}%</h3>
+            {% endif %}
+        </div>
+        <div class="description">
+            <h2>Описание</h2>
+            {{ alcogol.description }}
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+.navbar {
+    display: flex;
+    flex-direction: raw;
+    margin: 10px 5px;
+    background-color: red;
+}
+
+a {
+    margin: 5px;
+    padding: 5px 15px;
+    text-decoration: none;
+}
+
+.item1 {
+    align-self: flex-end;
+    position: relative;
+
+}
+

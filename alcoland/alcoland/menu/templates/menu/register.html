@@ -1,0 +1,22 @@
+{% extends 'menu/main.html' %}
+
+{% block title %}
+Регистрация :: {{ block.super }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="register-container">
+    <form method="post" class="regform">
+        <div class="reg-inner">
+            {% csrf_token %}
+            <h3 class="register">Регистрация</h3>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit"">Зарегистрироваться</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

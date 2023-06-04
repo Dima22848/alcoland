@@ -1,0 +1,22 @@
+{% extends 'menu/main.html' %}
+
+{% block title %}
+{{ block.super }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="login-container">
+    <form method="post" class="logform">
+        <div class="log-inner">
+            {% csrf_token %}
+            <h3 class="login">Вход</h3>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit"">Войти</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

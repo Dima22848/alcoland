@@ -1,0 +1,40 @@
+.solo-grid-container {
+    display: grid;
+    grid-template-areas:
+        ". picture right ."
+        ".   .     right ."
+        ".   .     right .";
+    grid-template-columns: 10% 1fr 2fr 10%;
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.picture {
+    grid-area: picture;
+    background-color: ;
+}
+
+.right {
+    grid-area: right;
+    display: grid;
+    grid-template-areas:
+        "name character"
+        "basket description";
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: 0.1fr 1fr;
+}
+
+.name {
+    grid-area: name;
+}
+
+.basket {
+    grid-area: basket;
+}
+
+.character {
+    grid-area: character;
+}
+
+.description {
+    grid-area: description;
+}

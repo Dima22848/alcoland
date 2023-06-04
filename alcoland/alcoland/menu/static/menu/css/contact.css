@@ -1,0 +1,55 @@
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 10px 30% 1fr;
+    grid-template-areas:
+        ". . ."
+        ". form ."
+        ". . ." ;
+    background-color: lightblue;
+}
+
+.contactform {
+    width: 500px;
+    grid-area: form;
+    display: grid;
+    border: 1px solid black;
+    background-color: lightyellow;
+    color: black;
+    padding: 50px;
+    background-image: url(https://oir.mobi/uploads/posts/2021-03/1616573469_4-p-krasivii-fon-gradient-4.jpg);
+    background-size: cover;
+}
+
+.contactform input,
+.contactform button,
+.contactform textarea {
+    display: block;
+    width: 100%;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    background: #E9EFF6;
+    line-height: 40px;
+    border-width: 0;
+    border-radius: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.contactform button[type="submit"] {
+    margin-top: 30px;
+    background: #f69a73;
+    border-bottom: 4px solid #d87d56;
+    color: white;
+    font-size: 20px;
+}
+
+
+.contactform textarea {
+    resize: none;
+}
+
+.contactbutton{
+    justify-content: start;
+    background-color: yellow;
+}
+

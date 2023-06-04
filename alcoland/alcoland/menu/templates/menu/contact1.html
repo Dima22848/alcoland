@@ -1,0 +1,22 @@
+{% extends 'menu/main.html' %}
+
+{% block title %}
+Обратная связь :: {{ block.super }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="contact-container">
+
+    <h1 class="contact">Обратная связь</h1>
+
+    <form method="post" class="contactform">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="contactbutton">Отправить</button>
+    </form>
+
+</div>
+{% endblock %}
+

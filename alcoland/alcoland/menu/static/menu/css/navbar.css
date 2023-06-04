@@ -1,0 +1,32 @@
+div.navbar {
+    background-color: green;
+    display: grid;
+    grid-template-rows: 50px;
+    grid-template-columns: repeat(12, 1fr)
+}
+
+.navbaritem {
+    margin: 15px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.item1 {
+    background-color: red;
+}
+
+.nav1 {
+    grid-column: 1 / 2;
+}
+
+.nav2 {
+    grid-column: 2 / span 2;
+}
+
+.nav3 {
+    grid-column: 11 / 12;
+}
+
+.nav4 {
+    grid-column: 12 / 13;
+}

@@ -1,0 +1,49 @@
+.grid-container {
+    background-color: red;
+    display: grid;
+    height: content;
+    grid-template-areas:
+        "sidebar content content content ..."
+        "sidebar content content content ..."
+        "...     content content content ..."
+        "...     content content content ...";
+    grid-template-columns: 150px repeat(3, 1fr) 20px;
+    grid-template-rows: content;
+    grid-gap: 20px 2em;
+    grid-auto-flow: raw;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: lightblue;
+    align-self: start;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+a.hover1:hover {
+    color: green;
+}
+
+.content {
+    grid-area: content;
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    grid-template-rows: content;
+    background-color: green;
+}
+
+
+
+.alcogolitem:hover {
+    scale: 1.05;
+}
+
+
+.item1 {
+    border: 1px solid green;
+}
+
+.item2 {
+    border: 1px solid black;
+}

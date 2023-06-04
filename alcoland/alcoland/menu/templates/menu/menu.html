@@ -1,0 +1,101 @@
+{% extends 'menu/main.html' %}
+
+{% block title %}
+Главная страница :: {{ block.super }}
+{% endblock %}
+
+{% block content %}
+
+<h1>Список алкоголя</h1>
+<div class="grid-container">
+    <div class="sidebar">
+    {% for item in alc_list_names %}
+        <div class="item5"><a class="hover1 sidebar1" href="{% url 'main' %}?q1={{item.slug}}">{{ item.name }}</a></div>
+    {% endfor %}
+    </div>
+    <div class="content">
+    {% for item in page_obj %}
+        <div class="content1">
+            <a class="item" href="{{ item.get_absolute_url }}">
+                <div>{{ item.name }}</div>
+                <div class="alcogolitem"><img src="{{ item.photo.url }}" alt="" height="400px"></div>
+                <div>{{ item.description }}</div>
+                <div class="price">{{ item.price }} грн</div>
+            </a>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+
+{% if q1 %}
+
+{% if page_obj.paginator.num_pages > 1 %}
+<div class="pagination">
+    {% if page_obj.has_previous %}
+    <span class="">
+        <a class="pag" href="?page={{ page_obj.previous_page_number }}&q1={{q1}}"><</a>
+    </span>
+    {% endif %}
+
+    {% for p in page_obj.paginator.page_range %}
+
+
+    {% if page_obj.number == p %}
+    <span class="" aria-current="">
+        <a class="pag current" href="?page={{ p }}&q1={{q1}}">{{ p }}</a>
+    </span>
+    {% elif p > page_obj.number|add:-3 and p < page_obj.number|add:3 %}
+    <span class="">
+        <a class="pag" href="?page={{ p }}&q1={{q1}}">{{ p }}</a>
+    </span>
+    {% endif %}
+
+    {% endfor %}
+
+     {% if page_obj.has_next %}
+    <span class="">
+        <a class="pag" href="?page={{ page_obj.next_page_number }}&q1={{q1}}">></a>
+    </span>
+    {% endif %}
+</div>
+{% endif %}
+
+{% else %}
+
+<div class="pagination">
+{% if page_obj.has_previous %}
+    <span class="">
+        <a class="pag" href="?page={{ page_obj.previous_page_number }}"><</a>
+    </span>
+    {% endif %}
+
+    {% for p in page_obj.paginator.page_range %}
+
+
+    {% if page_obj.number == p %}
+    <span class="" aria-current="">
+        <a class="pag current" href="?page={{ p }}">{{ p }}</a>
+    </span>
+    {% elif p > page_obj.number|add:-3 and p < page_obj.number|add:3 %}
+    <span class="">
+        <a class="pag" href="?page={{ p }}">{{ p }}</a>
+    </span>
+    {% endif %}
+
+    {% endfor %}
+
+     {% if page_obj.has_next %}
+    <span class="">
+        <a class="pag" href="?page={{ page_obj.next_page_number }}">></a>
+    </span>
+    {% endif %}
+</div>
+
+{% endif %}
+
+{% endblock %}
+
+
+
+
+

@@ -1,0 +1,103 @@
+body {
+    background-color: lightblue;
+}
+
+.grid-container {
+    background-color: lightblue;
+    display: grid;
+    height: content;
+    grid-template-areas:
+        "sidebar content content content ..."
+        "sidebar content content content ..."
+        "...     content content content ..."
+        "...     content content content ...";
+    grid-template-columns: 150px repeat(3, 1fr) 20px;
+    grid-template-rows: content;
+    grid-gap: 30px 2em;
+    grid-auto-flow: raw;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    align-self: start;
+    margin-top: 10px;
+    font-size: 25px;
+    background-color: lightgray;
+}
+
+.sidebar1 {
+    margin: 15px;
+    padding: 5px 15px;
+    text-decoration: none;
+}
+
+a.hover1:hover {
+    color: green;
+}
+
+.content {
+    grid-area: content;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: content;
+    grid-gap: 20px;
+    justify-content: start;
+    align-content: center;
+    background-color: lightblue;
+}
+
+.content1 {
+    border: 1px solid black;
+    background-color: yellow;
+    display: grid;
+    justify-content: center;
+}
+
+.item {
+    justify-items: center;
+    display: grid;
+   /* align-self: stretch; */
+    background-color: pink;
+    text-decoration: none;
+    color: black;
+}
+
+.price {
+    align-self: end;
+}
+
+.alcogolitem:hover {
+    scale: 1.05;
+}
+
+
+.item5 {
+    border: 1px solid black;
+    color: black;
+    background-color: lightgray;
+}
+
+.item2 {
+    border: 1px solid black;
+}
+
+.pagination {
+    position: relative;
+    background-color: ;
+    text-align: center;
+    top: 25px;
+    font-size: 20px;
+}
+
+.pag {
+    text-decoration: none;
+    font-size: 25px;
+}
+
+a:active {
+    color: red;
+}
+
+a.current {
+    color: red;
+}
